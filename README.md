@@ -2,24 +2,24 @@
 
 ## Overview
 
-CipherURL is a machine learning-based tool that classifies URLs as phishing or legitimate using an XGBoost model. The project focuses on detecting suspicious patterns in URLs and presenting results in a simple, explainable interface.
+CipherURL is a machine learning-based tool that classifies URLs as phishing or legitimate using an XGBoost model. The system analyzes URL patterns and provides a clear, explainable result.
 
 ---
 
 ## Demo
 
-![App Screenshot](Screenshot.png)
+![App Screenshot](https://raw.githubusercontent.com/Abhi1366-create/cipherurl/main/Screenshot.png)
 
 ---
 
 ## Features
 
 * URL-based phishing detection
-* Numeric risk score output
+* Numeric risk score
 * Clear classification (Phishing / Safe)
-* Explanation of why a URL is flagged
+* Explanation of results
 * URL structure breakdown
-* External reporting via Google Safe Browsing and PhishTank
+* External reporting (Google Safe Browsing, PhishTank)
 
 ---
 
@@ -29,7 +29,7 @@ CipherURL is a machine learning-based tool that classifies URLs as phishing or l
 * Dataset size: ~247,000 samples
 * Features: 40+ engineered features
 * Accuracy: ~93–95%
-* Focus: improving recall to reduce missed phishing attacks
+* Focus: reducing missed phishing attacks (high recall)
 
 ---
 
@@ -38,8 +38,8 @@ CipherURL is a machine learning-based tool that classifies URLs as phishing or l
 1. User enters a URL
 2. Features are extracted from the URL
 3. Model predicts phishing probability
-4. Decision is made using a tuned threshold
-5. Results and explanations are displayed
+4. Decision is made using a threshold
+5. Result and explanation are displayed
 
 ---
 
@@ -52,7 +52,7 @@ cipherurl/
 ├── src/
 │   └── train.py
 ├── requirements.txt
-├── screenshot.png
+├── Screenshot.png
 └── README.md
 ```
 
@@ -78,19 +78,21 @@ python src/train.py
 streamlit run app/app.py
 ```
 
+Note: You must train the model before running the app, as the model file is not included.
+
 ---
 
 ## Dataset
 
-The dataset is not included in the repository due to size. It can be obtained from publicly available phishing datasets.
+The dataset is not included in the repository due to size.
 
 ---
 
 ## Notes
 
-* This project is intended for educational purposes
-* Feature extraction in the UI is a simplified approximation
-* Not intended for production security use
+* This project is for educational purposes
+* Feature extraction in the UI is simplified
+* Not intended for production use
 
 ---
 
