@@ -10,16 +10,24 @@ from xgboost import XGBClassifier
 DATA_PATH = "data/dataset.csv"
 MODEL_PATH = "models/model.pkl"
 
-# load data
+# check dataset
+if not os.path.exists(DATA_PATH):
+    raise FileNotFoundError(
+        "Dataset not found.\n"
+        "Create a folder named 'data' and place your dataset as:\n"
+        "data/dataset.csv"
+    )
+
+# load dataset
 df = pd.read_csv(DATA_PATH)
 df.columns = df.columns.str.strip().str.lower()
 
 # label column
 label_col = "type"
 if label_col not in df.columns:
-    raise Exception("Label column 'type' not found")
+    raise Exception("Label column 'type' not found in dataset")
 
-# map labels
+# clean labels
 df[label_col] = df[label_col].astype(str).str.lower()
 df[label_col] = df[label_col].map({
     'phishing': 1,
@@ -27,16 +35,17 @@ df[label_col] = df[label_col].map({
     '1': 1,
     '0': 0
 })
+
 df = df.dropna(subset=[label_col])
 
 # split features
 X = df.drop(columns=[label_col])
 y = df[label_col]
 
-# class balance
+# handle imbalance
 scale_pos_weight = (y == 0).sum() / (y == 1).sum()
 
-# train / val / test split
+# split data
 X_trainval, X_test, y_trainval, y_test = train_test_split(
     X, y, test_size=0.2, stratify=y, random_state=42
 )
@@ -84,13 +93,14 @@ for t in np.arange(0.3, 0.7, 0.02):
 y_pred = (probs >= best_thresh).astype(int)
 
 # evaluation
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+print("\nAccuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))
+print("\nConfusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
 # save model
 os.makedirs("models", exist_ok=True)
+
 with open(MODEL_PATH, "wb") as f:
     pickle.dump((model, X.columns.tolist(), best_thresh), f)
 
-print("Model saved at:", MODEL_PATH)
+print("\nModel saved at:", MODEL_PATH)

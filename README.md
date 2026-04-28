@@ -60,31 +60,36 @@ cipherurl/
 
 ## Setup and Run
 
-### Install dependencies
+### 1. Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### Train the model
+### 2. Dataset setup
+
+Download a phishing dataset and place it in:
+
+```
+data/dataset.csv
+```
+
+Recommended dataset:
+https://data.mendeley.com/datasets/6tm2d6sz7p/1
+
+### 3. Train the model
 
 ```
 python src/train.py
 ```
 
-### Run the application
+### 4. Run the application
 
 ```
 streamlit run app/app.py
 ```
 
 Note: You must train the model before running the app, as the model file is not included.
-
----
-
-## Dataset
-
-The dataset is not included in the repository due to size.
 
 ---
 
@@ -96,8 +101,8 @@ The dataset is not included in the repository due to size.
 
 ---
 
-## About the Developer
+## About
 
 ### Abhishek M R
 
-BCA Student | AI & Cybersecurity Enthusiast
+BCA Student | Exploring AI and cybersecurity.
