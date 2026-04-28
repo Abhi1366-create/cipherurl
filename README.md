@@ -6,6 +6,9 @@ CipherURL is a machine learning-based tool that classifies URLs as phishing or l
 
 The project emphasizes both detection performance and interpretability, making it suitable for demonstration and learning purposes in cybersecurity and applied machine learning.
 
+## Demo
+
+![App Screenshot](Screenshot.png)
 ---
 
 ## Features
@@ -95,9 +98,11 @@ streamlit run app/app.py
 ---
 
 ## About Me
-Abhishek M R
 
-BCA Student | AI & Cybersecurity Enthusiast
-=======
+### Abhishek M R
+
+### BCA Student | AI & Cybersecurity Enthusiast ###
+
+---
 # cipherurl
 >>>>>>> d0b28ede69e1b86be4c1611d068c83bfe94ebbd6
