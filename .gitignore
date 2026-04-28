@@ -1,0 +1,10 @@
+# Ignore dataset and model files
+data/
+models/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
