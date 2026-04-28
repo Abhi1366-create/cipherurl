@@ -66,7 +66,7 @@ cipherurl/
 pip install -r requirements.txt
 ```
 
-## Dataset Setup
+### 2. Dataset Setup
 
 A `data/` folder is already included in the project.
 
