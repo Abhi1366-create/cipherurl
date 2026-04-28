@@ -8,7 +8,7 @@ CipherURL is a machine learning-based tool that classifies URLs as phishing or l
 
 ## Demo
 
-![App Screenshot](screenshot.png)
+![App Screenshot](Screenshot.png)
 
 ---
 
