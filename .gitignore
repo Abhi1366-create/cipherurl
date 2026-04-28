@@ -1,5 +1,6 @@
 # Ignore dataset and model files
-data/
+data/*
+!data/.gitkeep
 models/
 
 # Python cache

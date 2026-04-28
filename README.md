@@ -66,9 +66,11 @@ cipherurl/
 pip install -r requirements.txt
 ```
 
-### 2. Dataset setup
+## Dataset Setup
 
-Download a phishing dataset and place it in:
+A `data/` folder is already included in the project.
+
+Download a phishing dataset and place it inside the folder as:
 
 ```
 data/dataset.csv
@@ -76,6 +78,14 @@ data/dataset.csv
 
 Recommended dataset:
 https://data.mendeley.com/datasets/6tm2d6sz7p/1
+
+Make sure the file name is exactly:
+
+```
+dataset.csv
+```
+
+The dataset is not included in the repository to keep it lightweight.
 
 ### 3. Train the model
 
